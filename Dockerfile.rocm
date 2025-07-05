@@ -1,0 +1,247 @@
+# FROM "compute-artifactory.amd.com:5000/rocm-plus-docker/framework/compute-rocm-rel-6.4:94_ubuntu24.04_py3.12_pytorch_release-2.6_bbf4b9b"
+FROM "compute-artifactory.amd.com:5000/rocm-plus-docker/framework/compute-rocm-rel-6.4:108_ubuntu22.04_py3.12_pytorch_release-2.7.0_a767af9"
+
+SHELL ["/bin/bash", "-ceuxo", "pipefail"]
+
+ENV MAX_JOBS=512
+
+
+# linux-headers-"$(uname -r)" --> linux-headers-generic or linux-headers-azure
+RUN apt update \
+    && apt install -y software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa -y \
+    && apt install -y nano wget ninja-build \
+    && apt install -y python3 python3-pip git \
+    && apt install -y sqlite3 libsqlite3-dev libfmt-dev libmsgpack-dev libsuitesparse-dev \
+    && apt install -y python3.12-venv ccache \
+    && apt install iproute2 -y \
+    && apt install libyaml-cpp-dev -y \
+    && apt install -y linux-headers-generic libelf-dev \
+    && apt install -y gcc make libtool autoconf librdmacm-dev rdmacm-utils infiniband-diags ibverbs-utils perftest ethtool libibverbs-dev rdma-core strace libibmad5 libibnetdisc5 ibverbs-providers libibumad-dev libibumad3 libibverbs1 libnl-3-dev libnl-route-3-dev
+
+
+
+RUN python3 -m pip install --upgrade pip
+RUN pip install ninja cmake==3.31 setuptools wheel
+RUN pip install uv tabulate
+RUN pip install ipython pytest fire pydantic pybind11
+
+RUN pip uninstall -y torch torchvision triton
+
+RUN apt --fix-broken install -y
+RUN apt install -y libzstd-dev
+RUN apt install -y libibverbs-dev
+
+ENV LLVM_SYMBOLIZER_PATH=/opt/rocm/llvm/bin/llvm-symbolizer
+ENV PATH=$PATH:/opt/rocm/bin:
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/rocm/lib/:
+
+ENV PYTORCH_ROCM_ARCH=gfx942
+ENV MAX_JOBS=512
+
+#Latest RCCL lib
+WORKDIR /workspace/
+ARG RCCL_BRANCH="7a84c5d"
+RUN apt -y remove rccl
+RUN git clone --recursive https://github.com/ROCm/rccl \
+    && cd rccl \
+    && git checkout ${RCCL_BRANCH} \
+    && ./install.sh --amdgpu_targets="gfx942" --prefix=/opt/rocm
+
+# aotirton 0.9.2 is included in upstream pytorch
+
+# Latest stable hipBLASLt
+WORKDIR /workspace/
+ARG HIPBLASLT_BRANCH="4f1f8bf"
+RUN git clone https://github.com/rocm/hipblaslt \
+    && cd hipblaslt \
+    && git checkout ${HIPBLASLT_BRANCH} \
+    && rm -fr /opt/rocm/include/hipblaslt \
+    && rm -fr /opt/rocm/lib/libhipblaslt* \
+    && MAX_JOBS=${MAX_JOBS} ./install.sh -idc --architecture ${PYTORCH_ROCM_ARCH}  \
+    && cd ../ && rm -fr hipblaslt
+
+ENV HIP_FORCE_DEV_KERNARG=1
+
+# Triton 3.3
+RUN pip install triton==3.3.0
+
+# # pytorch v2.8.0 dev
+# ARG PYTORCH_BRANCH="e2f9759"
+# RUN rm -fr pytorch \
+#     && git clone https://github.com/pytorch/pytorch \
+#     && cd pytorch \
+#     && git checkout ${PYTORCH_BRANCH} \
+#     && git submodule update --recursive --init \
+#     && ./tools/amd_build/build_amd.py \
+#     && BUILD_TEST=0 python3 setup.py install \
+#     && cd .. && rm -fr pytorch
+
+# pytorch v2.7.1 dev
+WORKDIR /workspace/
+ARG PYTORCH_BRANCH="e2d141dbde55c2a4370fac5165b0561b6af4798b"
+RUN rm -fr pytorch \
+    && git clone https://github.com/pytorch/pytorch \
+    && cd pytorch \
+    && git checkout ${PYTORCH_BRANCH} \
+    && git submodule update --recursive --init \
+    && ./tools/amd_build/build_amd.py \
+    && BUILD_TEST=0 python3 setup.py install \
+    && cd .. && rm -fr pytorch
+
+# vision
+WORKDIR /workspace/
+ARG TORCH_VISION_BRANCH="5f03dc5"
+RUN rm -rf vision && git clone https://github.com/pytorch/vision \
+    && cd vision \
+    && git checkout ${TORCH_VISION_BRANCH} \
+    && python setup.py install \
+    && cd ../ && rm -fr vision \
+    && cp /opt/conda/lib/libjpeg.so.9* /lib/x86_64-linux-gnu/
+
+# FA v2.7.4-cktile
+WORKDIR /workspace/
+ARG GPU_ARCHS="gfx942"
+RUN git clone --recursive https://github.com/ROCm/flash-attention.git -b v2.7.4-cktile \
+    && cd flash-attention \
+    && python setup.py install \
+    && cd .. \
+    && rm -rf flash-attention
+
+# # TransformerEngine v1.13
+# ARG TE_BRANCH="1087b26"
+# ENV NVTE_USE_HIPBLASLT=1
+# ENV NVTE_FRAMEWORK=pytorch
+# ENV NVTE_ROCM_ARCH=${PYTORCH_ROCM_ARCH}
+# ENV NVTE_USE_CAST_TRANSPOSE_TRITON=0
+# ENV NVTE_CK_USES_BWD_V3=1
+# ENV NVTE_CK_V3_BF16_CVT=2
+# RUN git clone --recursive https://github.com/ROCm/TransformerEngine.git \
+#     && cd TransformerEngine && git checkout ${TE_BRANCH} && MAX_JOBS=${MAX_JOBS} pip install . \
+#     && cd .. && rm -rf TransformerEngine
+
+RUN apt --fix-broken install -y
+RUN pip install datasets numpy==1.26.4 transformers
+RUN pip install --upgrade 'optree>=0.13.0'
+
+WORKDIR /workspace/
+
+#Groupped GEMM
+RUN git clone https://github.com/caaatch22/grouped_gemm.git &&\
+    cd grouped_gemm &&\
+    git checkout rocm &&\
+    git submodule update --init --recursive &&\
+    pip install . && cd ../ && rm -rf grouped_gemm
+
+RUN cp /opt/conda/lib/libjpeg.so.9* /lib/x86_64-linux-gnu/
+RUN pip install --upgrade sympy
+
+RUN pip install accelerate==1.2.1
+RUN pip install peft
+RUN pip install trl==0.12.2
+RUN pip install deepspeed
+
+ENV WORKSPACE_DIR=/workspace
+
+RUN pip3 install \
+scipy \
+einops \
+flask-restful \
+nltk \
+pytest \
+pytest-cov \
+pytest_mock \
+pytest-csv \
+pytest-random-order \
+sentencepiece \
+wrapt \
+zarr \
+wandb \
+tensorstore==0.1.45 \
+pytest_mock \
+pybind11 \
+setuptools==69.5.1 \
+datasets \
+tiktoken \
+pynvml
+
+RUN pip3 install "huggingface_hub[cli]"
+RUN python3 -m nltk.downloader punkt_tab
+
+
+# Install Causal-Conv1d and its dependencies
+WORKDIR /workspace/
+ENV CAUSAL_CONV1D_FORCE_BUILD=TRUE
+ENV MAMBA_FORCE_BUILD=TRUE
+ENV HIP_ARCHITECTURES=${PYTORCH_ROCM_ARCH}
+RUN git clone https://github.com/Dao-AILab/causal-conv1d causal-conv1d &&\
+    cd causal-conv1d &&\
+    git show --oneline -s &&\
+    pip install . &&\
+    cd ../ && rm -fr causal-conv1d
+
+# Install mamba
+WORKDIR /workspace/
+RUN git clone https://github.com/state-spaces/mamba -b v2.2.4 mamba &&\
+    cd mamba &&\
+    git show --oneline -s &&\
+    pip install --no-build-isolation . &&\
+    cd ../ && rm -rf mamba
+
+
+
+
+# #Megatron-LM 
+# ARG MEGATRON_LM_BRANCH="83f0eba"
+# RUN git clone https://github.com/ROCm/Megatron-LM.git \
+#     && cd Megatron-LM \
+#     && git checkout ${MEGATRON_LM_BRANCH} \
+#     && pip install -e .
+
+# WORKDIR $WORKSPACE_DIR/
+
+
+
+######if only need the vllm-0.8.5 part
+RUN pip install "importlib-metadata==8.0.0" && \
+    pip install --no-deps opentelemetry-api && \
+    pip install "starlette==0.46.0" && \
+    pip install "fastapi<1.0.0" && \
+    pip install setuptools_scm && \
+    pip uninstall -y s3transfer || true && \
+    pip install s3transfer==0.13.0 && \
+    pip install botocore==1.38.22 && \
+    pip install awscli==1.40.21 && \
+    pip install boto3==1.38.22
+
+# vllm v0.8.5
+# ENV GITHUB_USERNAME=yushengsu-thu
+# ENV GITHUB_MAIL=yushengsu@gmail.com
+
+# RUN git config --global user.name "${GITHUB_USERNAME}" \
+#     && git config --global user.email "${GITHUB_MAIL}" 
+
+WORKDIR /workspace/
+
+ENV VLLM_TARGET_DEVICE=rocm 
+ENV ROCM_PATH=/opt/rocm 
+ENV SETUPTOOLS_SCM_PRETEND_VERSION=0.8.5.dev
+
+# RUN git clone https://github.com/RLFoundation/vllm-patch.git
+RUN pip uninstall -y vllm || true
+RUN rm -rf vllm-patch
+RUN git clone https://github.com/RLFoundation/vllm-patch.git \
+    && cd vllm-patch \
+    && git checkout v0.8.5-sleep-numa \
+    && rm -rf build/ dist/ *.egg-info \
+    && ln -sf /opt/rocm/lib/libamdhip64.so /usr/lib/libamdhip64.so \
+    && SETUPTOOLS_SCM_PRETEND_VERSION=0.8.5.dev PYTORCH_ROCM_ARCH="gfx90a;gfx942" MAX_JOBS=${MAX_JOBS} python3 setup.py install
+    # RUN SETUPTOOLS_SCM_PRETEND_VERSION=0.8.5.dev PYTORCH_ROCM_ARCH="gfx90a;gfx942" MAX_JOBS=${MAX_JOBS} python3 setup.py develop
+
+
+
+
+
+# WORKDIR /workspace/
+
+CMD ["/usr/bin/bash"]
