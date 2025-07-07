@@ -1,4 +1,6 @@
 export PYTHONFAULTHANDLER=1
+export AMD_LOG_LEVEL=4
+export HSAKMT_VERBOSE_LEVEL=7
 
 
 docker run --rm -it \
@@ -19,4 +21,4 @@ docker run --rm -it \
 
 
 
-python vllm_test.py
+python vllm_test.py 2>&1 | tee test.log
