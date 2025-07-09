@@ -1,0 +1,302 @@
+INFO 07-09 17:13:02 [__init__.py:239] Automatically detected platform rocm.
+Testing Qwen/Qwen2.5-14B-Instruct with 8 tensor parallel size and 0.7 GPU memory utilization
+Fetching 18 files:   0%|          | 0/18 [00:00<?, ?it/s]Fetching 18 files: 100%|██████████| 18/18 [00:00<00:00, 232299.91it/s]
+INFO 07-09 18:05:43 [config.py:717] This model supports multiple tasks: {'classify', 'score', 'generate', 'embed', 'reward'}. Defaulting to 'generate'.
+INFO 07-09 18:05:43 [arg_utils.py:1669] rocm is experimental on VLLM_USE_V1=1. Falling back to V0 Engine.
+INFO 07-09 18:05:43 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 07-09 18:05:43 [config.py:3614] cudagraph sizes specified by model runner [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256] is overridden by config [1]
+INFO 07-09 18:05:43 [llm_engine.py:240] Initializing a V0 LLM engine (v0.8.5.dev) with config: model='Qwen/Qwen2.5-14B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-14B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=8, pipeline_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=Qwen/Qwen2.5-14B-Instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=None, chunked_prefill_enabled=False, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[1],"max_capture_size":1}, use_cached_outputs=False, 
+WARNING 07-09 18:05:44 [utils.py:2382] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/getting_started/troubleshooting.html#python-multiprocessing for more information. Reason: CUDA is initialized
+WARNING 07-09 18:05:44 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 96 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 07-09 18:05:45 [rocm.py:184] None is not supported in AMD GPUs.
+INFO 07-09 18:05:45 [rocm.py:185] Using ROCmFlashAttention backend.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+INFO 07-09 18:05:48 [__init__.py:239] Automatically detected platform rocm.
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:05:50 [multiproc_worker_utils.py:225] Worker ready; awaiting tasks
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:11:19 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:11:19 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:11:20 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:11:20 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:11:20 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:11:20 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:11:20 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:11:20 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:11:46 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:11:46 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:11:51 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:11:51 [rocm.py:185] Using ROCmFlashAttention backend.
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:11:52 [rocm.py:184] None is not supported in AMD GPUs.
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:11:52 [rocm.py:185] Using ROCmFlashAttention backend.
+INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:11:54 [utils.py:1055] Found nccl from library librccl.so.1
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:11:54 [pynccl.py:69] vLLM is using nccl==2.23.4
+INFO 07-09 18:21:10 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1, 2, 3, 4, 5, 6, 7], buffer_handle=(7, 4194304, 6, 'psm_bc23bcb5'), local_subscribe_addr='ipc:///tmp/5e7ce3d8-d5c1-4abf-9812-935515273314', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 4 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 4
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 1 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 2 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 2
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 6 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 6
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 7 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 7
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 5 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 5
+INFO 07-09 18:21:10 [parallel_state.py:1004] rank 0 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:21:10 [parallel_state.py:1004] rank 3 in world size 8 is assigned as DP rank 0, PP rank 0, TP rank 3
+INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1687)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1690)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1689)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+[1;36m(VllmWorkerProcess pid=1688)[0;0m INFO 07-09 18:21:10 [model_runner.py:1108] Starting to load model Qwen/Qwen2.5-14B-Instruct...
+WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1685)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1684)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1687)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1686)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1690)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1688)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+[1;36m(VllmWorkerProcess pid=1689)[0;0m WARNING 07-09 18:21:10 [rocm.py:286] Model architecture 'Qwen2ForCausalLM' is partially supported by ROCm: Sliding window attention (SWA) is not yet supported in Triton flash attention. For half-precision SWA support, please use CK flash attention by setting `VLLM_USE_TRITON_FLASH_ATTN=0`
+CUDA Error: invalid argument at /workspace/vllm-patch/csrc/cumem_allocator.cpp:278
+CUDA Error: invalid argument at /workspace/vllm-patch/csrc/cumem_allocator.cpp:278
+CUDA Error: invalid argument at /workspace/vllm-patch/csrc/cumem_allocator.cpp:278
+CUDA Error: invalid argument at /workspace/vllm-patch/csrc/cumem_allocator.cpp:278
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Exception in worker VllmWorkerProcess while processing method load_model.
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Traceback (most recent call last):
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/multiproc_worker_utils.py", line 232, in _run_worker_process
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     output = run_method(worker, method, args, kwargs)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/utils.py", line 2456, in run_method
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/worker.py", line 203, in load_model
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model_runner.load_model()
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/model_runner.py", line 1111, in load_model
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = get_model(vllm_config=self.vllm_config)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/__init__.py", line 14, in get_model
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return loader.load_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 452, in load_model
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     model = _initialize_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 133, in _initialize_model
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return model_class(vllm_config=vllm_config, prefix=prefix)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 436, in __init__
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = Qwen2Model(vllm_config=vllm_config,
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/compilation/decorators.py", line 151, in __init__
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     old_init(self, vllm_config=vllm_config, prefix=prefix, **kwargs)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 294, in __init__
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.embed_tokens = VocabParallelEmbedding(
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                         ^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 264, in __init__
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.quant_method.create_weights(self,
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 32, in create_weights
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     weight = Parameter(torch.empty(sum(output_partition_sizes),
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1688)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] torch.OutOfMemoryError: HIP out of memory. Tried to allocate 186.00 MiB. GPU 5 has a total capacity of 191.45 GiB of which 188.75 GiB is free. Of the allocated memory 0 bytes is allocated by PyTorch, and 2.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Exception in worker VllmWorkerProcess while processing method load_model.
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Traceback (most recent call last):
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/multiproc_worker_utils.py", line 232, in _run_worker_process
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     output = run_method(worker, method, args, kwargs)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/utils.py", line 2456, in run_method
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/worker.py", line 203, in load_model
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model_runner.load_model()
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/model_runner.py", line 1111, in load_model
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = get_model(vllm_config=self.vllm_config)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/__init__.py", line 14, in get_model
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return loader.load_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 452, in load_model
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     model = _initialize_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 133, in _initialize_model
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return model_class(vllm_config=vllm_config, prefix=prefix)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 436, in __init__
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = Qwen2Model(vllm_config=vllm_config,
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/compilation/decorators.py", line 151, in __init__
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     old_init(self, vllm_config=vllm_config, prefix=prefix, **kwargs)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 294, in __init__
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.embed_tokens = VocabParallelEmbedding(
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                         ^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 264, in __init__
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.quant_method.create_weights(self,
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 32, in create_weights
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     weight = Parameter(torch.empty(sum(output_partition_sizes),
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1689)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] torch.OutOfMemoryError: HIP out of memory. Tried to allocate 186.00 MiB. GPU 6 has a total capacity of 191.45 GiB of which 188.73 GiB is free. Of the allocated memory 0 bytes is allocated by PyTorch, and 2.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Exception in worker VllmWorkerProcess while processing method load_model.
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] Traceback (most recent call last):
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/multiproc_worker_utils.py", line 232, in _run_worker_process
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     output = run_method(worker, method, args, kwargs)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/utils.py", line 2456, in run_method
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/worker.py", line 203, in load_model
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model_runner.load_model()
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/model_runner.py", line 1111, in load_model
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = get_model(vllm_config=self.vllm_config)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/__init__.py", line 14, in get_model
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return loader.load_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 452, in load_model
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     model = _initialize_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 133, in _initialize_model
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return model_class(vllm_config=vllm_config, prefix=prefix)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 436, in __init__
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.model = Qwen2Model(vllm_config=vllm_config,
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/compilation/decorators.py", line 151, in __init__
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     old_init(self, vllm_config=vllm_config, prefix=prefix, **kwargs)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 294, in __init__
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.embed_tokens = VocabParallelEmbedding(
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                         ^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 264, in __init__
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     self.quant_method.create_weights(self,
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 32, in create_weights
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     weight = Parameter(torch.empty(sum(output_partition_sizes),
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1687)[0;0m ERROR 07-09 18:21:10 [multiproc_worker_utils.py:238] torch.OutOfMemoryError: HIP out of memory. Tried to allocate 186.00 MiB. GPU 4 has a total capacity of 191.45 GiB of which 188.69 GiB is free. Of the allocated memory 0 bytes is allocated by PyTorch, and 2.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238] Exception in worker VllmWorkerProcess while processing method load_model.
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238] Traceback (most recent call last):
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/multiproc_worker_utils.py", line 232, in _run_worker_process
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     output = run_method(worker, method, args, kwargs)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/utils.py", line 2456, in run_method
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/worker.py", line 203, in load_model
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     self.model_runner.load_model()
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/worker/model_runner.py", line 1111, in load_model
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     self.model = get_model(vllm_config=self.vllm_config)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/__init__.py", line 14, in get_model
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     return loader.load_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 452, in load_model
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     model = _initialize_model(vllm_config=vllm_config)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/model_loader/loader.py", line 133, in _initialize_model
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     return model_class(vllm_config=vllm_config, prefix=prefix)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 436, in __init__
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     self.model = Qwen2Model(vllm_config=vllm_config,
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/compilation/decorators.py", line 151, in __init__
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     old_init(self, vllm_config=vllm_config, prefix=prefix, **kwargs)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/models/qwen2.py", line 294, in __init__
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     self.embed_tokens = VocabParallelEmbedding(
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]                         ^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 264, in __init__
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     self.quant_method.create_weights(self,
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/model_executor/layers/vocab_parallel_embedding.py", line 32, in create_weights
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     weight = Parameter(torch.empty(sum(output_partition_sizes),
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/torch/utils/_device.py", line 104, in __torch_function__
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]     return func(*args, **kwargs)
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238]            ^^^^^^^^^^^^^^^^^^^^^
+[1;36m(VllmWorkerProcess pid=1690)[0;0m ERROR 07-09 18:21:11 [multiproc_worker_utils.py:238] torch.OutOfMemoryError: HIP out of memory. Tried to allocate 186.00 MiB. GPU 7 has a total capacity of 191.45 GiB of which 188.74 GiB is free. Of the allocated memory 0 bytes is allocated by PyTorch, and 2.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:35:31 [weight_utils.py:265] Using model weights format ['*.safetensors']
+INFO 07-09 18:35:32 [weight_utils.py:265] Using model weights format ['*.safetensors']
+Loading safetensors checkpoint shards:   0% Completed | 0/8 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  12% Completed | 1/8 [00:03<00:21,  3.14s/it]
+Loading safetensors checkpoint shards:  25% Completed | 2/8 [00:40<02:18, 23.05s/it]
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:36:20 [weight_utils.py:265] Using model weights format ['*.safetensors']
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:36:23 [weight_utils.py:265] Using model weights format ['*.safetensors']
+Loading safetensors checkpoint shards:  38% Completed | 3/8 [01:32<03:02, 36.54s/it]
+Loading safetensors checkpoint shards:  50% Completed | 4/8 [02:25<02:51, 42.86s/it]
+Loading safetensors checkpoint shards:  62% Completed | 5/8 [03:24<02:26, 48.72s/it]
+Loading safetensors checkpoint shards:  75% Completed | 6/8 [04:15<01:39, 49.70s/it]
+Loading safetensors checkpoint shards:  88% Completed | 7/8 [05:08<00:50, 50.68s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [06:00<00:00, 51.06s/it]
+Loading safetensors checkpoint shards: 100% Completed | 8/8 [06:00<00:00, 45.07s/it]
+
+INFO 07-09 18:41:33 [loader.py:458] Loading weights took 360.60 seconds
+INFO 07-09 18:41:34 [model_runner.py:1140] Model loading took 3.7773 GiB and 1223.249739 seconds
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:41:34 [loader.py:458] Loading weights took 362.50 seconds
+[1;36m(VllmWorkerProcess pid=1685)[0;0m INFO 07-09 18:41:35 [model_runner.py:1140] Model loading took 3.7773 GiB and 1224.289333 seconds
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:42:49 [loader.py:458] Loading weights took 389.17 seconds
+[1;36m(VllmWorkerProcess pid=1684)[0;0m INFO 07-09 18:42:50 [model_runner.py:1140] Model loading took 3.7773 GiB and 1299.231179 seconds
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:42:56 [loader.py:458] Loading weights took 392.70 seconds
+[1;36m(VllmWorkerProcess pid=1686)[0;0m INFO 07-09 18:42:57 [model_runner.py:1140] Model loading took 3.7773 GiB and 1306.075875 seconds
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/yushensu/projects/docker_rocm_test/vllm_test.py", line 112, in <module>
+[rank0]:     llm = LLM(model=model, enable_sleep_mode=True,
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/utils.py", line 1161, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/entrypoints/llm.py", line 247, in __init__
+[rank0]:     self.llm_engine = LLMEngine.from_engine_args(
+[rank0]:                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/engine/llm_engine.py", line 510, in from_engine_args
+[rank0]:     return engine_cls.from_vllm_config(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/engine/llm_engine.py", line 486, in from_vllm_config
+[rank0]:     return cls(
+[rank0]:            ^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/engine/llm_engine.py", line 275, in __init__
+[rank0]:     self.model_executor = executor_class(vllm_config=vllm_config)
+[rank0]:                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/executor_base.py", line 286, in __init__
+[rank0]:     super().__init__(*args, **kwargs)
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/executor_base.py", line 52, in __init__
+[rank0]:     self._init_executor()
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/mp_distributed_executor.py", line 125, in _init_executor
+[rank0]:     self._run_workers("load_model",
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/mp_distributed_executor.py", line 190, in _run_workers
+[rank0]:     ] + [output.get() for output in worker_outputs]
+[rank0]:          ^^^^^^^^^^^^
+[rank0]:   File "/opt/conda/envs/py_3.12/lib/python3.12/site-packages/vllm-0.8.5.dev0+rocm642-py3.12-linux-x86_64.egg/vllm/executor/multiproc_worker_utils.py", line 58, in get
+[rank0]:     raise self.result.exception
+[rank0]: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 186.00 MiB. GPU 4 has a total capacity of 191.45 GiB of which 188.69 GiB is free. Of the allocated memory 0 bytes is allocated by PyTorch, and 2.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_HIP_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR 07-09 18:42:57 [multiproc_worker_utils.py:120] Worker VllmWorkerProcess pid 1688 died, exit code: -15
+INFO 07-09 18:42:57 [multiproc_worker_utils.py:124] Killing local vLLM worker processes
+/opt/conda/envs/py_3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 3 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/opt/conda/envs/py_3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[rank0]:[W709 18:42:58.242303641 ProcessGroupNCCL.cpp:1479] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

@@ -1,11 +1,4 @@
-export PYTHONFAULTHANDLER=1
-export AMD_LOG_LEVEL=4
-export HSAKMT_VERBOSE_LEVEL=7
-
-
-export HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-export RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES=1
-
+#!/bin/bash
 
 docker run --rm -it \
   --device /dev/dri \
@@ -24,6 +17,14 @@ docker run --rm -it \
   /bin/bash
 
 
+export PYTHONFAULTHANDLER=1
+export AMD_LOG_LEVEL=4
+export HSAKMT_VERBOSE_LEVEL=7
+export AMD_LOG_LEVEL_FILE=/home/yushensu/projects/docker_rocm_test/hip_log_ 
+
+
+export HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+export RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES=1
 
 python vllm_test.py 2>&1 | tee test.log
 
