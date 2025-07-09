@@ -1,6 +1,0 @@
-=== Inference Results for Node 078826a107cd ===
-Model: Qwen/Qwen2.5-14B-Instruct
-Tensor Parallel Size: 8
-GPU Memory Utilization: 0.7
-Start Time: 2025-07-09 17:13:04
-============================================================
