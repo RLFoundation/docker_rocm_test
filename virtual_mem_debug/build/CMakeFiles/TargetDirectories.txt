@@ -1,0 +1,4 @@
+/home/yushensu/projects/docker_rocm_test/virtual_mem_debug/build/CMakeFiles/cumem_functions.dir
+/home/yushensu/projects/docker_rocm_test/virtual_mem_debug/build/CMakeFiles/cumem_test.dir
+/home/yushensu/projects/docker_rocm_test/virtual_mem_debug/build/CMakeFiles/edit_cache.dir
+/home/yushensu/projects/docker_rocm_test/virtual_mem_debug/build/CMakeFiles/rebuild_cache.dir

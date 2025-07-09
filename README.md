@@ -11,6 +11,9 @@ I've prepared the Dockerfile.rocm and the built image
 
 ### Test case 
 The `vllm_test.py` will excute the sleep mde within vllm
+```bash
+bash run_test.sh
+```
 
 ### Test Script 
 You can run `run_test.sh` to re-implement the error. It will `pull the image`, `launch the image`, and then `excute the vllm_test.py`

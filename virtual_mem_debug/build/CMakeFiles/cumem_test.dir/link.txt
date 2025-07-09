@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cumem_test.dir/cumem_test.cpp.o CMakeFiles/cumem_functions.dir/cumem_functions.cpp.o -o cumem_test   -L/opt/rocm/lib  -Wl,-rpath,/opt/rocm/lib -lamdhip64
