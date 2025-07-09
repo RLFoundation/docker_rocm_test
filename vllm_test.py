@@ -93,8 +93,9 @@ if __name__ == "__main__":
                 f.write("-" * 50 + "\n")
 
     # model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 1)]
-    model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 2)]
-    # model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 8)]
+    # model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 2)]
+    # model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 4)]
+    model_list = [("Qwen/Qwen2.5-14B-Instruct", 0.7, 8)]
     model, gpu_memory_utilization, tensor_parallel_size = model_list[0]
     print(f"Testing {model} with {tensor_parallel_size} tensor parallel size and {gpu_memory_utilization} GPU memory utilization")
 

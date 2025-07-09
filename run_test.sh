@@ -23,8 +23,9 @@
 # export AMD_LOG_LEVEL_FILE=/home/yushensu/projects/docker_rocm_test/hip_log_ 
 
 
-# export HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
-export HIP_VISIBLE_DEVICES=0,1
+export HIP_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
+# export HIP_VISIBLE_DEVICES=0,1,2,3
+# export HIP_VISIBLE_DEVICES=0,1
 export RAY_EXPERIMENTAL_NOSET_HIP_VISIBLE_DEVICES=1
 
 # python vllm_test.py 2>&1 | tee test.log
